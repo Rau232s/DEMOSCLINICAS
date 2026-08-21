@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Dental San Antonio - Dr. Víctor Antelo</title>
+    <style>
+        /* === ESTILOS CSS === */
+        :root {
+            --primary-dark: #0f3741;
+            --primary-blue: #0076a8;
+            --teal-bright: #00a896;
+            --accent-green: #25d366;
+            --light-bg: #f2f7f9;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #666666;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER & NAVBAR --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--teal-bright));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .brand-text h1 {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+        }
+
+        .brand-text span {
+            font-size: 0.85rem;
+            color: var(--teal-bright);
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--teal-bright);
+        }
+
+        .btn-nav {
+            background-color: var(--primary-blue);
+            color: var(--white) !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            transition: background-color 0.3s ease !important;
+            white-space: nowrap;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--primary-dark) !important;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            padding: 4rem 1.5rem 6rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--light-bg);
+            transform: skewY(-2deg);
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--accent-green);
+            color: var(--white);
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        /* --- HIGHLIGHT STATS BANNER --- */
+        .stats-banner {
+            max-width: 1100px;
+            margin: -3rem auto 3rem auto;
+            position: relative;
+            z-index: 20;
+            padding: 0 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .stat-card {
+            text-align: center;
+            border-right: 1px solid #eee;
+        }
+
+        .stat-card:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* --- SERVICIOS --- */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .services {
+            max-width: 1100px;
+            margin: 0 auto 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h4 {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- INFORMACION Y CONTACTO --- */
+        .info-contact {
+            max-width: 1100px;
+            margin: 0 auto 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .info-box, .contact-box {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .info-box h3, .contact-box h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 1.2rem;
+        }
+
+        .info-item span {
+            font-size: 1.2rem;
+        }
+
+        .info-item div strong {
+            display: block;
+            color: var(--primary-dark);
+            font-size: 0.95rem;
+        }
+
+        .info-item div p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-blue);
+        }
+
+        .btn-submit {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 0.9rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-blue);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-menu {
+                gap: 0.8rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .btn-nav {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-card {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 1rem;
+            }
+            .stat-card:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="brand-logo">
+                <div class="logo-icon">🦷</div>
+                <div class="brand-text">
+                    <h1>Dental San Antonio</h1>
+                    <span>Dr. Víctor Antelo</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="https://wa.me/59171500083" target="_blank" class="btn-nav">Agendar Cita</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <span class="hero-tag">✨ ¡LUCE LA SONRISA QUE SIEMPRE SOÑASTE!</span>
+            <h2>La solución definitiva para una sonrisa perfecta</h2>
+            <p>Clínica dental especializada con atención integral, personalizada y tecnología moderna en Tarija.</p>
+            
+            <div class="hero-features">
+                <div class="feature-item">✓ Tratamientos Personalizados</div>
+                <div class="feature-item">✓ Tecnología de Última Generación</div>
+                <div class="feature-item">✓ Materiales de Alta Calidad</div>
+            </div>
+
+            <a href="https://wa.me/59171500083" target="_blank" class="btn-whatsapp">
+                📲 Agenda tu Cita Hoy por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <section class="stats-banner">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">+15</div>
+                <div class="stat-label">Años de Experiencia</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2.6k</div>
+                <div class="stat-label">Seguidores en Redes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Equipos Modernos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">UAJMS</div>
+                <div class="stat-label">Formación Profesional</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="services">
+        <div class="section-title">
+            <h3>Nuestros Servicios Especializados</h3>
+            <p>Cuidamos tu salud bucal con la mejor tecnología y máxima precisión</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">😁</div>
+                <h4>Ortodoncia</h4>
+                <p>Alineación perfecta para tu sonrisa con tratamientos modernos y cómodos.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🦷</div>
+                <h4>Implantes Dentales</h4>
+                <p>Recupera la funcionalidad y estética de tus dientes de forma duradera.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h4>Estética Dental</h4>
+                <p>Diseño de sonrisa, blanqueamiento y carillas de alta calidad.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧸</div>
+                <h4>Odontopediatría</h4>
+                <p>Atención especializada y amigable para el cuidado dental de los niños.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="info-contact">
+        <div class="info-grid">
+            <div class="info-box">
+                <h3>Información de la Clínica</h3>
+                <div class="info-item">
+                    <span>📍</span>
+                    <div>
+                        <strong>Dirección:</strong>
+                        <p>Av. Domingo Paz, entre Junín y O’Connor, Condominio Atenas</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span>🏙️</span>
+                    <div>
+                        <strong>Ubicación:</strong>
+                        <p>Ciudad Tarija, Bolivia</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span>📱</span>
+                    <div>
+                        <strong>Teléfono / WhatsApp:</strong>
+                        <p>+591 71500083</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span>🎓</span>
+                    <div>
+                        <strong>Especialista:</strong>
+                        <p>Dr. Víctor Antelo (Universidad Autónoma Juan Misael Saracho)</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span>🏛️</span>
+                    <div>
+                        <strong>Instalaciones:</strong>
+                        <p>Ambientes amplios y propios equipados con última tecnología</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <h3>Envíanos un Mensaje</h3>
+                <form class="contact-form" id="dentalForm">
+                    <div class="form-group">
+                        <input type="text" id="nombre" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="telefono" placeholder="Número de celular" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="mensaje" rows="4" placeholder="¿En qué tratamiento estás interesado?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Consulta</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Clínica Dental San Antonio - Dr. Víctor Antelo. Todos los derechos reservados.</p>
+        <p><small>Tarija, Bolivia</small></p>
+    </footer>
+
+    <script>
+        document.getElementById('dentalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const mensaje = document.getElementById('mensaje').value;
+            const textoWhatsApp = `Hola, mi nombre es ${encodeURIComponent(nombre)}. Mi teléfono es ${encodeURIComponent(telefono)}. Consulta: ${encodeURIComponent(mensaje)}`;
+            const urlWhatsApp = `https://wa.me/59171500083?text=${textoWhatsApp}`;
+            window.open(urlWhatsApp, '_blank');
+        });
+    </script>
+</body>
+</html>
