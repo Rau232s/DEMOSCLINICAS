@@ -1,0 +1,2329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Clínica Dental Dr. Fuentes | Odontología en Tarija</title>
+  <meta name="description" content="Clínica Dental Dr. Fuentes en Tarija. Atención odontológica de lunes a sábado. Agenda tu consulta directamente por WhatsApp." />
+  <meta name="theme-color" content="#082f49" />
+  <meta property="og:title" content="Clínica Dental Dr. Fuentes | Tarija" />
+  <meta property="og:description" content="Cuida tu sonrisa con atención cercana y profesional. Agenda por WhatsApp." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root{
+      --navy:#082f49;
+      --navy-2:#0c4a6e;
+      --blue:#0369a1;
+      --sky:#0ea5e9;
+      --cyan:#22d3ee;
+      --mint:#dff7f5;
+      --ice:#eef9fc;
+      --cream:#fbfaf7;
+      --white:#ffffff;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --line:#dbe8ee;
+      --whatsapp:#25D366;
+      --shadow:0 24px 70px rgba(8,47,73,.13);
+      --shadow-soft:0 14px 40px rgba(8,47,73,.09);
+      --radius:26px;
+      --radius-sm:18px;
+      --max:1180px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:90px;
+    }
+
+    body{
+      font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+      overflow-x:hidden;
+    }
+
+    body.menu-open{overflow:hidden;}
+
+    img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    a{color:inherit;}
+
+    button,input,textarea,select{
+      font:inherit;
+    }
+
+    .container{
+      width:min(calc(100% - 40px),var(--max));
+      margin-inline:auto;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.77rem;
+      line-height:1;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      font-weight:800;
+      color:var(--blue);
+      margin-bottom:16px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:22px;
+      height:2px;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--sky),var(--cyan));
+    }
+
+    .section-title{
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(2rem,4.1vw,3.55rem);
+      line-height:1.05;
+      letter-spacing:-.045em;
+      color:var(--navy);
+    }
+
+    .section-copy{
+      margin-top:18px;
+      color:var(--muted);
+      line-height:1.78;
+      font-size:1rem;
+      max-width:620px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:52px;
+      padding:0 22px;
+      border:none;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+      cursor:pointer;
+      transition:.28s ease;
+      white-space:nowrap;
+    }
+
+    .btn i{width:19px;height:19px;}
+
+    .btn-primary{
+      color:#fff;
+      background:linear-gradient(135deg,var(--navy),var(--blue));
+      box-shadow:0 12px 28px rgba(3,105,161,.24);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 34px rgba(3,105,161,.34);
+    }
+
+    .btn-whatsapp{
+      color:#063d1c;
+      background:#fff;
+      border:1px solid rgba(255,255,255,.25);
+      box-shadow:0 12px 26px rgba(3,46,25,.14);
+    }
+
+    .btn-whatsapp .wa-dot{
+      width:29px;
+      height:29px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--whatsapp);
+      color:#fff;
+    }
+
+    .btn-whatsapp:hover{
+      transform:translateY(-2px);
+      background:#f8fffb;
+    }
+
+    /* NAV */
+    .site-header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      transition:.3s ease;
+    }
+
+    .site-header.scrolled{
+      background:rgba(251,250,247,.88);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(148,163,184,.22);
+      box-shadow:0 9px 28px rgba(15,23,42,.05);
+    }
+
+    .nav{
+      height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      text-decoration:none;
+      min-width:max-content;
+      z-index:1002;
+    }
+
+    .brand-mark{
+      width:44px;
+      height:44px;
+      border-radius:15px;
+      background:linear-gradient(145deg,var(--navy),var(--sky));
+      color:#fff;
+      display:grid;
+      place-items:center;
+      box-shadow:0 10px 22px rgba(8,47,73,.18);
+    }
+
+    .brand-mark i{width:23px;height:23px;}
+
+    .brand-name{
+      font-family:"Manrope",sans-serif;
+      color:var(--navy);
+      font-size:1rem;
+      line-height:1.08;
+      font-weight:800;
+      letter-spacing:-.025em;
+    }
+
+    .brand-name small{
+      display:block;
+      font-family:"DM Sans",sans-serif;
+      font-size:.73rem;
+      margin-top:4px;
+      color:var(--muted);
+      letter-spacing:.01em;
+      font-weight:600;
+    }
+
+    .nav-links{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      gap:28px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      font-size:.9rem;
+      font-weight:700;
+      color:#29475a;
+      position:relative;
+    }
+
+    .nav-links a:not(.nav-cta)::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-7px;
+      height:2px;
+      width:0;
+      border-radius:5px;
+      background:var(--sky);
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover::after{width:100%;}
+
+    .nav-cta{
+      color:#fff !important;
+      background:var(--navy);
+      padding:11px 17px;
+      border-radius:999px;
+    }
+
+    .menu-toggle{
+      display:none;
+      border:0;
+      background:#fff;
+      width:45px;
+      height:45px;
+      border-radius:14px;
+      box-shadow:var(--shadow-soft);
+      color:var(--navy);
+      cursor:pointer;
+      z-index:1002;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:760px;
+      padding:134px 0 82px;
+      display:flex;
+      align-items:center;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(34,211,238,.16), transparent 28%),
+        radial-gradient(circle at 79% 20%, rgba(14,165,233,.15), transparent 24%),
+        linear-gradient(180deg,#f9fdfd 0%,#f8fbfb 54%,var(--cream) 100%);
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:520px;
+      height:520px;
+      border-radius:50%;
+      border:1px solid rgba(14,165,233,.13);
+      right:-170px;
+      top:80px;
+      box-shadow:
+        0 0 0 70px rgba(14,165,233,.025),
+        0 0 0 140px rgba(14,165,233,.018);
+    }
+
+    .hero-grid{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:1.01fr .99fr;
+      gap:64px;
+      align-items:center;
+    }
+
+    .hero-copy h1{
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(3rem,5.9vw,5.45rem);
+      line-height:.96;
+      letter-spacing:-.065em;
+      font-weight:800;
+      color:var(--navy);
+      max-width:740px;
+    }
+
+    .hero-copy h1 span{
+      display:block;
+      color:var(--blue);
+    }
+
+    .hero-copy > p{
+      max-width:580px;
+      font-size:1.1rem;
+      line-height:1.72;
+      color:#526b7b;
+      margin:25px 0 30px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:30px;
+    }
+
+    .hero .btn-primary{
+      min-height:57px;
+      padding-inline:25px;
+    }
+
+    .hero .btn-whatsapp{
+      min-height:57px;
+      color:var(--navy);
+      border:1px solid #dbe8ee;
+    }
+
+    .hero-proof{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      color:#526b7b;
+      font-size:.88rem;
+      font-weight:700;
+    }
+
+    .proof-avatars{
+      display:flex;
+      padding-left:8px;
+    }
+
+    .proof-avatars span{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      margin-left:-8px;
+      border:3px solid #fff;
+      display:grid;
+      place-items:center;
+      color:var(--navy);
+      background:#d9f0f5;
+      font-weight:800;
+      font-size:.72rem;
+    }
+
+    .proof-stars{
+      color:#f59e0b;
+      letter-spacing:1px;
+    }
+
+    .hero-visual{
+      position:relative;
+      min-height:560px;
+    }
+
+    .hero-image-card{
+      position:absolute;
+      inset:0 0 0 38px;
+      border-radius:38px 38px 110px 38px;
+      overflow:hidden;
+      box-shadow:0 32px 80px rgba(8,47,73,.20);
+      background:#dceff5;
+    }
+
+    .hero-image-card img{
+      height:100%;
+      min-height:560px;
+      object-position:center center;
+    }
+
+    .hero-image-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,transparent 58%,rgba(8,47,73,.22));
+      pointer-events:none;
+    }
+
+    .floating-card{
+      position:absolute;
+      z-index:4;
+      background:rgba(255,255,255,.93);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border:1px solid rgba(255,255,255,.75);
+      box-shadow:var(--shadow);
+    }
+
+    .float-rating{
+      left:-12px;
+      bottom:48px;
+      border-radius:20px;
+      padding:16px 20px;
+      min-width:185px;
+    }
+
+    .float-rating strong{
+      font-family:"Manrope",sans-serif;
+      display:block;
+      font-size:1.65rem;
+      color:var(--navy);
+    }
+
+    .float-rating span{
+      color:#f59e0b;
+      font-size:.87rem;
+      letter-spacing:1px;
+    }
+
+    .float-rating small{
+      color:var(--muted);
+      display:block;
+      margin-top:4px;
+      font-size:.72rem;
+    }
+
+    .float-hours{
+      right:-24px;
+      top:42px;
+      border-radius:18px;
+      padding:14px 17px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      max-width:210px;
+    }
+
+    .float-icon{
+      width:42px;
+      height:42px;
+      flex:0 0 42px;
+      border-radius:13px;
+      background:var(--mint);
+      color:var(--blue);
+      display:grid;
+      place-items:center;
+    }
+
+    .float-icon i{width:20px;height:20px;}
+
+    .float-hours strong{
+      display:block;
+      font-size:.85rem;
+      color:var(--navy);
+    }
+
+    .float-hours small{
+      display:block;
+      margin-top:3px;
+      color:var(--muted);
+      font-size:.73rem;
+      line-height:1.25;
+    }
+
+    /* TRUST BAR */
+    .trustbar{
+      position:relative;
+      z-index:5;
+      margin-top:-32px;
+      padding-bottom:78px;
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      background:#fff;
+      border:1px solid rgba(219,232,238,.85);
+      border-radius:23px;
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
+    }
+
+    .trust-item{
+      min-height:112px;
+      padding:25px 30px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      position:relative;
+    }
+
+    .trust-item:not(:last-child)::after{
+      content:"";
+      position:absolute;
+      top:24px;
+      right:0;
+      width:1px;
+      height:64px;
+      background:var(--line);
+    }
+
+    .trust-icon{
+      width:46px;
+      height:46px;
+      border-radius:15px;
+      background:var(--ice);
+      color:var(--blue);
+      display:grid;
+      place-items:center;
+      flex:0 0 46px;
+    }
+
+    .trust-icon i{width:21px;height:21px;}
+
+    .trust-item strong{
+      display:block;
+      color:var(--navy);
+      font-size:.97rem;
+      margin-bottom:4px;
+    }
+
+    .trust-item span{
+      color:var(--muted);
+      font-size:.82rem;
+      line-height:1.35;
+    }
+
+    /* SERVICES */
+    .services{
+      padding:25px 0 105px;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:40px;
+      margin-bottom:42px;
+    }
+
+    .section-head .section-copy{margin-top:0;}
+
+    .carousel-controls{
+      display:flex;
+      gap:10px;
+      flex:0 0 auto;
+    }
+
+    .carousel-btn{
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--navy);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      transition:.25s ease;
+    }
+
+    .carousel-btn:hover{
+      border-color:var(--sky);
+      color:var(--blue);
+      transform:translateY(-2px);
+      box-shadow:0 10px 22px rgba(8,47,73,.08);
+    }
+
+    .carousel-btn i{width:20px;height:20px;}
+
+    .carousel-shell{
+      width:100%;
+      overflow:hidden;
+    }
+
+    .services-track{
+      display:grid;
+      grid-auto-flow:column;
+      grid-auto-columns:calc((100% - 42px) / 3);
+      gap:21px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      scroll-behavior:smooth;
+      scrollbar-width:none;
+      padding:4px 2px 24px;
+    }
+
+    .services-track::-webkit-scrollbar{display:none;}
+
+    .service-card{
+      position:relative;
+      min-height:450px;
+      border-radius:28px;
+      overflow:hidden;
+      background:#0b3348;
+      scroll-snap-align:start;
+      box-shadow:0 18px 40px rgba(8,47,73,.10);
+      isolation:isolate;
+      cursor:pointer;
+    }
+
+    .service-card img{
+      position:absolute;
+      inset:0;
+      height:100%;
+      z-index:-3;
+      transition:transform .55s cubic-bezier(.2,.75,.3,1);
+    }
+
+    .service-card::before{
+      content:"";
+      position:absolute;
+      z-index:-2;
+      inset:0;
+      background:linear-gradient(180deg,rgba(4,31,48,.04) 18%,rgba(4,31,48,.82) 83%,rgba(4,31,48,.96) 100%);
+    }
+
+    .service-card::after{
+      content:"";
+      position:absolute;
+      z-index:-1;
+      inset:0;
+      background:linear-gradient(135deg,rgba(14,165,233,.0),rgba(14,165,233,.18));
+      opacity:0;
+      transition:.35s ease;
+    }
+
+    .service-card:hover img{transform:scale(1.045);}
+    .service-card:hover::after{opacity:1;}
+
+    .service-number{
+      position:absolute;
+      top:22px;
+      left:22px;
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-weight:800;
+      font-size:.78rem;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.24);
+      backdrop-filter:blur(10px);
+    }
+
+    .service-content{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      padding:30px 27px;
+      color:#fff;
+    }
+
+    .service-content h3{
+      font-family:"Manrope",sans-serif;
+      font-size:1.45rem;
+      margin-bottom:8px;
+      letter-spacing:-.025em;
+    }
+
+    .service-content p{
+      color:rgba(255,255,255,.78);
+      line-height:1.55;
+      font-size:.89rem;
+      max-width:300px;
+    }
+
+    .service-link{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      margin-top:15px;
+      color:#fff;
+      font-size:.8rem;
+      font-weight:800;
+    }
+
+    .service-link i{width:16px;height:16px;}
+
+    .services-note{
+      color:var(--muted);
+      font-size:.76rem;
+      margin-top:2px;
+      text-align:right;
+    }
+
+    /* DIFFERENTIAL */
+    .care{
+      padding:105px 0;
+      background:#f1fafb;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .care::before{
+      content:"";
+      position:absolute;
+      width:440px;
+      height:440px;
+      border-radius:50%;
+      background:rgba(34,211,238,.08);
+      filter:blur(2px);
+      right:-170px;
+      top:-180px;
+    }
+
+    .care-grid{
+      display:grid;
+      grid-template-columns:.93fr 1.07fr;
+      gap:74px;
+      align-items:center;
+    }
+
+    .care-media{
+      position:relative;
+      min-height:570px;
+    }
+
+    .care-media .main-photo{
+      height:570px;
+      border-radius:30px 110px 30px 30px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .care-media .main-photo img{
+      height:100%;
+    }
+
+    .care-badge{
+      position:absolute;
+      bottom:22px;
+      right:-22px;
+      width:190px;
+      padding:18px;
+      border-radius:20px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+    }
+
+    .care-badge i{
+      width:24px;
+      height:24px;
+      color:var(--sky);
+      margin-bottom:10px;
+    }
+
+    .care-badge strong{
+      display:block;
+      color:var(--navy);
+      font-size:.9rem;
+      line-height:1.3;
+    }
+
+    .care-badge small{
+      display:block;
+      margin-top:6px;
+      color:var(--muted);
+      line-height:1.4;
+    }
+
+    .care-copy .section-copy{max-width:570px;}
+
+    .benefits{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:33px;
+    }
+
+    .benefit{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:18px;
+      background:rgba(255,255,255,.7);
+      border:1px solid rgba(219,232,238,.9);
+      border-radius:17px;
+    }
+
+    .benefit-icon{
+      flex:0 0 38px;
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      background:#fff;
+      color:var(--blue);
+      display:grid;
+      place-items:center;
+      box-shadow:0 7px 17px rgba(8,47,73,.06);
+    }
+
+    .benefit-icon i{width:18px;height:18px;}
+
+    .benefit strong{
+      display:block;
+      color:var(--navy);
+      font-size:.87rem;
+      margin-bottom:4px;
+    }
+
+    .benefit span{
+      display:block;
+      color:var(--muted);
+      font-size:.78rem;
+      line-height:1.42;
+    }
+
+    /* PROCESS */
+    .process{
+      padding:105px 0;
+    }
+
+    .process-header{
+      text-align:center;
+      max-width:720px;
+      margin:0 auto 55px;
+    }
+
+    .process-header .section-copy{
+      margin-inline:auto;
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .step{
+      border-radius:24px;
+      padding:30px;
+      border:1px solid var(--line);
+      background:#fff;
+      position:relative;
+      min-height:235px;
+      transition:.3s ease;
+    }
+
+    .step:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .step-number{
+      position:absolute;
+      right:22px;
+      top:18px;
+      font-family:"Manrope",sans-serif;
+      font-size:3.3rem;
+      line-height:1;
+      color:#e7f3f6;
+      font-weight:800;
+    }
+
+    .step-icon{
+      width:48px;
+      height:48px;
+      border-radius:15px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      background:linear-gradient(135deg,var(--navy),var(--sky));
+      margin-bottom:28px;
+    }
+
+    .step-icon i{width:21px;height:21px;}
+
+    .step h3{
+      font-family:"Manrope",sans-serif;
+      color:var(--navy);
+      font-size:1.15rem;
+      margin-bottom:9px;
+    }
+
+    .step p{
+      font-size:.87rem;
+      line-height:1.6;
+      color:var(--muted);
+    }
+
+    /* CTA */
+    .cta{
+      padding:15px 0 110px;
+    }
+
+    .cta-card{
+      position:relative;
+      overflow:hidden;
+      min-height:390px;
+      border-radius:34px;
+      color:#fff;
+      background:
+        radial-gradient(circle at 85% 12%, rgba(34,211,238,.28), transparent 28%),
+        linear-gradient(135deg,#062f48 0%,#075985 100%);
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      align-items:center;
+      gap:30px;
+      padding:58px 62px;
+      box-shadow:0 30px 75px rgba(8,47,73,.19);
+    }
+
+    .cta-card::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      bottom:-140px;
+      width:380px;
+      height:380px;
+      border:1px solid rgba(255,255,255,.13);
+      border-radius:50%;
+      box-shadow:0 0 0 58px rgba(255,255,255,.035),0 0 0 116px rgba(255,255,255,.018);
+    }
+
+    .cta-copy{
+      position:relative;
+      z-index:2;
+    }
+
+    .cta-copy .eyebrow{
+      color:#9ae6f4;
+    }
+
+    .cta-copy .eyebrow::before{background:#67e8f9;}
+
+    .cta-copy h2{
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(2.2rem,4.2vw,4rem);
+      line-height:1.03;
+      letter-spacing:-.05em;
+      max-width:650px;
+    }
+
+    .cta-copy p{
+      color:rgba(255,255,255,.76);
+      line-height:1.7;
+      max-width:540px;
+      margin:18px 0 26px;
+    }
+
+    .cta-contact{
+      position:relative;
+      z-index:2;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.17);
+      backdrop-filter:blur(10px);
+      padding:27px;
+      border-radius:25px;
+    }
+
+    .contact-row{
+      display:flex;
+      gap:13px;
+      align-items:flex-start;
+      padding:13px 0;
+      border-bottom:1px solid rgba(255,255,255,.11);
+    }
+
+    .contact-row:last-child{border-bottom:0;}
+
+    .contact-row i{
+      width:20px;
+      height:20px;
+      color:#67e8f9;
+      flex:0 0 20px;
+      margin-top:2px;
+    }
+
+    .contact-row strong{
+      display:block;
+      font-size:.84rem;
+      margin-bottom:4px;
+    }
+
+    .contact-row span,
+    .contact-row a{
+      font-size:.8rem;
+      color:rgba(255,255,255,.74);
+      text-decoration:none;
+      line-height:1.45;
+    }
+
+    /* CONTACT / MAP */
+    .contact{
+      padding:0 0 110px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:26px;
+    }
+
+    .contact-panel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:34px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .contact-panel h3{
+      font-family:"Manrope",sans-serif;
+      font-size:1.55rem;
+      color:var(--navy);
+      letter-spacing:-.025em;
+      margin-bottom:9px;
+    }
+
+    .contact-panel > p{
+      color:var(--muted);
+      line-height:1.6;
+      font-size:.88rem;
+      margin-bottom:23px;
+    }
+
+    .form{
+      display:grid;
+      gap:13px;
+    }
+
+    .field label{
+      display:block;
+      font-size:.77rem;
+      color:#36576a;
+      font-weight:800;
+      margin-bottom:7px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea{
+      width:100%;
+      border:1px solid #d8e6eb;
+      background:#fbfdfd;
+      border-radius:14px;
+      outline:none;
+      padding:14px 15px;
+      color:var(--ink);
+      transition:.25s ease;
+    }
+
+    .field textarea{resize:vertical;min-height:105px;}
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus{
+      border-color:#7dd3fc;
+      box-shadow:0 0 0 4px rgba(14,165,233,.08);
+      background:#fff;
+    }
+
+    .form .btn{
+      width:100%;
+      margin-top:4px;
+    }
+
+    .map-wrap{
+      min-height:100%;
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      position:relative;
+      background:#e6f2f5;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .map-wrap iframe{
+      width:100%;
+      height:100%;
+      min-height:530px;
+      border:0;
+      filter:saturate(.84) contrast(.96);
+    }
+
+    .map-card{
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      background:rgba(255,255,255,.95);
+      border:1px solid rgba(255,255,255,.9);
+      backdrop-filter:blur(12px);
+      padding:17px 18px;
+      border-radius:18px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .map-card strong{
+      display:block;
+      color:var(--navy);
+      font-size:.86rem;
+      margin-bottom:4px;
+    }
+
+    .map-card span{
+      color:var(--muted);
+      font-size:.75rem;
+      line-height:1.35;
+    }
+
+    .map-card a{
+      flex:0 0 auto;
+      text-decoration:none;
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--navy);
+      color:#fff;
+    }
+
+    .map-card i{width:18px;height:18px;}
+
+    /* FOOTER */
+    footer{
+      background:#062b40;
+      color:#fff;
+      padding:55px 0 94px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.3fr .7fr .8fr;
+      gap:50px;
+      align-items:start;
+    }
+
+    footer .brand-name{color:#fff;}
+    footer .brand-name small{color:rgba(255,255,255,.55);}
+
+    .footer-about{
+      margin-top:17px;
+      max-width:410px;
+      color:rgba(255,255,255,.62);
+      font-size:.84rem;
+      line-height:1.7;
+    }
+
+    .footer-title{
+      font-size:.77rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      font-weight:800;
+      color:#9ae6f4;
+      margin-bottom:15px;
+    }
+
+    .footer-links{
+      list-style:none;
+      display:grid;
+      gap:11px;
+    }
+
+    .footer-links a{
+      color:rgba(255,255,255,.68);
+      text-decoration:none;
+      font-size:.83rem;
+    }
+
+    .footer-links a:hover{color:#fff;}
+
+    .footer-bottom{
+      margin-top:42px;
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,.10);
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      color:rgba(255,255,255,.45);
+      font-size:.73rem;
+    }
+
+    /* WHATSAPP FLOAT */
+    .wa-float{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:1100;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--whatsapp);
+      color:#fff;
+      box-shadow:0 15px 34px rgba(37,211,102,.38);
+      text-decoration:none;
+      transition:.25s ease;
+    }
+
+    .wa-float i{width:29px;height:29px;}
+
+    .wa-float:hover{
+      transform:translateY(-4px) scale(1.03);
+    }
+
+    .wa-float::before{
+      content:"Agenda por WhatsApp";
+      position:absolute;
+      right:72px;
+      white-space:nowrap;
+      background:#0f172a;
+      color:#fff;
+      border-radius:10px;
+      padding:8px 10px;
+      font-size:.72rem;
+      font-weight:700;
+      opacity:0;
+      transform:translateX(7px);
+      pointer-events:none;
+      transition:.25s ease;
+    }
+
+    .wa-float:hover::before{
+      opacity:1;
+      transform:none;
+    }
+
+    .mobile-cta{
+      display:none;
+    }
+
+    /* REVEAL */
+    .reveal{
+      opacity:0;
+      transform:translateY(22px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1020px){
+      .nav-links{gap:18px;}
+      .hero-grid{gap:36px;}
+      .hero-image-card{inset:0 0 0 18px;}
+      .float-hours{right:-8px;}
+      .services-track{grid-auto-columns:calc((100% - 21px) / 2);}
+      .care-grid{gap:44px;}
+      .cta-card{padding:48px 42px;}
+    }
+
+    @media (max-width: 820px){
+      html{scroll-padding-top:78px;}
+
+      .container{
+        width:min(calc(100% - 28px),var(--max));
+      }
+
+      .nav{height:72px;}
+
+      .menu-toggle{
+        display:grid;
+        place-items:center;
+      }
+
+      .nav-links{
+        position:fixed;
+        inset:0;
+        background:rgba(248,252,252,.98);
+        backdrop-filter:blur(18px);
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:28px;
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-10px);
+        transition:.28s ease;
+        z-index:1001;
+      }
+
+      .nav-links.open{
+        opacity:1;
+        visibility:visible;
+        transform:none;
+      }
+
+      .nav-links a{
+        font-family:"Manrope",sans-serif;
+        font-size:1.35rem;
+      }
+
+      .nav-cta{
+        font-size:1rem !important;
+        padding:13px 21px;
+      }
+
+      .hero{
+        min-height:auto;
+        padding:112px 0 65px;
+      }
+
+      .hero-grid{
+        grid-template-columns:1fr;
+        gap:46px;
+      }
+
+      .hero-copy{
+        text-align:center;
+      }
+
+      .hero-copy h1{
+        max-width:760px;
+        margin-inline:auto;
+      }
+
+      .hero-copy > p{
+        margin-inline:auto;
+      }
+
+      .hero-actions,
+      .hero-proof{
+        justify-content:center;
+      }
+
+      .hero-visual{
+        min-height:520px;
+        max-width:650px;
+        width:100%;
+        margin-inline:auto;
+      }
+
+      .hero-image-card{
+        inset:0 24px;
+        border-radius:34px 34px 90px 34px;
+      }
+
+      .hero-image-card img{min-height:520px;}
+
+      .float-rating{left:4px;}
+      .float-hours{right:3px;}
+
+      .trustbar{
+        margin-top:0;
+        padding-top:18px;
+        padding-bottom:70px;
+      }
+
+      .trust-grid{
+        grid-template-columns:1fr;
+      }
+
+      .trust-item{
+        min-height:95px;
+      }
+
+      .trust-item:not(:last-child)::after{
+        top:auto;
+        bottom:0;
+        left:24px;
+        right:24px;
+        width:auto;
+        height:1px;
+      }
+
+      .section-head{
+        align-items:flex-end;
+      }
+
+      .services-track{
+        grid-auto-columns:76%;
+      }
+
+      .care-grid{
+        grid-template-columns:1fr;
+      }
+
+      .care-copy{order:1;}
+      .care-media{
+        order:2;
+        max-width:650px;
+        width:100%;
+        margin-inline:auto;
+      }
+
+      .process-grid{
+        grid-template-columns:1fr;
+      }
+
+      .step{min-height:200px;}
+
+      .cta-card{
+        grid-template-columns:1fr;
+      }
+
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .map-wrap iframe{min-height:440px;}
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-brand{grid-column:1/-1;}
+    }
+
+    @media (max-width: 580px){
+      body{
+        padding-bottom:70px;
+      }
+
+      .brand-name{
+        font-size:.91rem;
+      }
+
+      .brand-name small{
+        font-size:.67rem;
+      }
+
+      .brand-mark{
+        width:40px;
+        height:40px;
+        border-radius:13px;
+      }
+
+      .hero{
+        padding-top:100px;
+      }
+
+      .hero-copy h1{
+        font-size:clamp(2.65rem,13vw,4rem);
+      }
+
+      .hero-copy > p{
+        font-size:1rem;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .hero-proof{
+        font-size:.76rem;
+        align-items:center;
+      }
+
+      .hero-visual{
+        min-height:410px;
+      }
+
+      .hero-image-card{
+        inset:0;
+        border-radius:26px 26px 68px 26px;
+      }
+
+      .hero-image-card img{
+        min-height:410px;
+      }
+
+      .float-rating{
+        left:10px;
+        bottom:15px;
+        padding:12px 15px;
+        min-width:155px;
+      }
+
+      .float-rating strong{font-size:1.35rem;}
+
+      .float-hours{
+        top:14px;
+        right:10px;
+        max-width:180px;
+        padding:10px 12px;
+      }
+
+      .float-icon{
+        width:36px;
+        height:36px;
+        flex:0 0 36px;
+      }
+
+      .float-hours strong{font-size:.75rem;}
+      .float-hours small{font-size:.66rem;}
+
+      .trust-item{
+        padding:22px;
+      }
+
+      .section-title{
+        font-size:clamp(2rem,10.8vw,3rem);
+      }
+
+      .section-head{
+        display:block;
+        margin-bottom:29px;
+      }
+
+      .section-head .section-copy{
+        margin-top:15px;
+      }
+
+      .carousel-controls{
+        margin-top:20px;
+      }
+
+      .services{
+        padding-bottom:78px;
+      }
+
+      .services-track{
+        grid-auto-columns:88%;
+        gap:14px;
+      }
+
+      .service-card{
+        min-height:410px;
+      }
+
+      .services-note{
+        text-align:left;
+        line-height:1.45;
+      }
+
+      .care{
+        padding:78px 0;
+      }
+
+      .care-media{
+        min-height:430px;
+      }
+
+      .care-media .main-photo{
+        height:430px;
+        border-radius:24px 70px 24px 24px;
+      }
+
+      .care-badge{
+        right:10px;
+        bottom:12px;
+        width:170px;
+        padding:14px;
+      }
+
+      .benefits{
+        grid-template-columns:1fr;
+      }
+
+      .process{
+        padding:78px 0;
+      }
+
+      .process-header{
+        text-align:left;
+        margin-bottom:35px;
+      }
+
+      .process-header .section-copy{
+        margin-inline:0;
+      }
+
+      .cta{
+        padding-bottom:78px;
+      }
+
+      .cta-card{
+        padding:37px 25px;
+        border-radius:26px;
+      }
+
+      .cta-copy h2{
+        font-size:2.35rem;
+      }
+
+      .cta-copy .btn{
+        width:100%;
+      }
+
+      .contact{
+        padding-bottom:78px;
+      }
+
+      .contact-panel{
+        padding:25px 20px;
+      }
+
+      .map-wrap iframe{
+        min-height:400px;
+      }
+
+      .map-card{
+        left:12px;
+        right:12px;
+        bottom:12px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .footer-brand{grid-column:auto;}
+
+      .footer-bottom{
+        flex-direction:column;
+      }
+
+      .wa-float{
+        display:none;
+      }
+
+      .mobile-cta{
+        position:fixed;
+        z-index:1200;
+        left:0;
+        right:0;
+        bottom:0;
+        height:70px;
+        display:flex;
+        padding:9px 12px;
+        background:rgba(255,255,255,.96);
+        border-top:1px solid var(--line);
+        backdrop-filter:blur(12px);
+      }
+
+      .mobile-cta a{
+        width:100%;
+        border-radius:15px;
+        background:var(--whatsapp);
+        color:#063d1c;
+        text-decoration:none;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:9px;
+        font-weight:800;
+      }
+
+      .mobile-cta i{
+        width:20px;
+        height:20px;
+        color:#fff;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+        animation-duration:.01ms !important;
+      }
+    }
+  </style>
+
+  <!-- Datos estructurados para SEO local -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Dentist",
+    "name":"Clínica Dental Dr. Fuentes",
+    "telephone":"+59178222939",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Av. Cochabamba, casi S/N",
+      "addressLocality":"Tarija",
+      "addressCountry":"BO"
+    },
+    "openingHours":"Mo-Sa 15:00-19:30",
+    "areaServed":"Tarija, Bolivia"
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Clínica Dental Dr. Fuentes">
+        <span class="brand-mark"><i data-lucide="sparkles"></i></span>
+        <span class="brand-name">
+          Clínica Dental Dr. Fuentes
+          <small>Odontología · Tarija</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#clinica">La clínica</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li>
+          <a class="nav-cta js-wa" href="https://wa.me/59178222939?text=Hola%20Dr.%20Fuentes%2C%20quisiera%20agendar%20una%20consulta." target="_blank" rel="noopener">
+            Agendar cita
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Tu sonrisa merece atención</span>
+          <h1>
+            Odontología cercana,
+            <span>una sonrisa a la vez.</span>
+          </h1>
+          <p>
+            Una experiencia dental pensada para que puedas consultar, resolver tus dudas
+            y agendar tu atención de forma sencilla desde tu celular.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary js-wa" href="https://wa.me/59178222939?text=Hola%20Dr.%20Fuentes%2C%20quisiera%20agendar%20una%20consulta." target="_blank" rel="noopener">
+              <i data-lucide="calendar-check"></i>
+              Agendar consulta
+            </a>
+
+            <a class="btn btn-whatsapp js-wa" href="https://wa.me/59178222939?text=Hola%20Dr.%20Fuentes%2C%20tengo%20una%20consulta%20odontol%C3%B3gica." target="_blank" rel="noopener">
+              <span class="wa-dot"><i data-lucide="message-circle"></i></span>
+              Escribir por WhatsApp
+            </a>
+          </div>
+
+          <div class="hero-proof">
+            <div class="proof-avatars" aria-hidden="true">
+              <span>DF</span><span>+</span><span>5★</span>
+            </div>
+            <div>
+              <div class="proof-stars">★★★★★</div>
+              <span>Ficha pública con calificación 5.0 en Google</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-image-card">
+            <img
+              src="https://images.pexels.com/photos/5622234/pexels-photo-5622234.jpeg?auto=compress&cs=tinysrgb&w=1400"
+              alt="Atención odontológica en un consultorio moderno"
+              loading="eager"
+            />
+          </div>
+
+          <div class="floating-card float-hours">
+            <span class="float-icon"><i data-lucide="clock-3"></i></span>
+            <div>
+              <strong>Lunes a sábado</strong>
+              <small>15:00 – 19:30</small>
+            </div>
+          </div>
+
+          <div class="floating-card float-rating">
+            <strong>5.0 <span>★</span></strong>
+            <small>Calificación pública en Google Maps</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trustbar">
+      <div class="container">
+        <div class="trust-grid reveal">
+          <div class="trust-item">
+            <span class="trust-icon"><i data-lucide="message-circle"></i></span>
+            <div>
+              <strong>Agenda directa</strong>
+              <span>Consulta disponibilidad por WhatsApp sin formularios complicados.</span>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <span class="trust-icon"><i data-lucide="map-pin"></i></span>
+            <div>
+              <strong>Atención en Tarija</strong>
+              <span>Av. Cochabamba, Tarija, Bolivia.</span>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <span class="trust-icon"><i data-lucide="clock"></i></span>
+            <div>
+              <strong>Horario de tarde</strong>
+              <span>Lunes a sábado de 15:00 a 19:30.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Servicios odontológicos</span>
+            <h2 class="section-title">Tu cuidado dental,<br>en un solo lugar.</h2>
+          </div>
+
+          <div>
+            <p class="section-copy">
+              Explora tratamientos frecuentes y consulta directamente por WhatsApp
+              cuál es el más adecuado para tu caso.
+            </p>
+
+            <div class="carousel-controls" aria-label="Controles del carrusel">
+              <button class="carousel-btn" id="servicePrev" aria-label="Servicio anterior">
+                <i data-lucide="arrow-left"></i>
+              </button>
+              <button class="carousel-btn" id="serviceNext" aria-label="Servicio siguiente">
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-shell reveal">
+          <div class="services-track" id="servicesTrack">
+
+            <!-- Servicios de DEMO: confirmar con el Dr. Fuentes antes de publicar la versión final. -->
+            <article class="service-card">
+              <img src="https://images.pexels.com/photos/5355903/pexels-photo-5355903.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Consulta y diagnóstico odontológico" loading="lazy">
+              <span class="service-number">01</span>
+              <div class="service-content">
+                <h3>Consulta y diagnóstico</h3>
+                <p>Una primera evaluación para conocer tu necesidad y definir los siguientes pasos.</p>
+                <span class="service-link">Consultar <i data-lucide="arrow-up-right"></i></span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <img src="https://images.pexels.com/photos/5622012/pexels-photo-5622012.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Limpieza y prevención dental" loading="lazy">
+              <span class="service-number">02</span>
+              <div class="service-content">
+                <h3>Limpieza y prevención</h3>
+                <p>Cuidado preventivo para mantener una boca saludable y detectar problemas a tiempo.</p>
+                <span class="service-link">Consultar <i data-lucide="arrow-up-right"></i></span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <img src="https://images.pexels.com/photos/5622000/pexels-photo-5622000.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Restauraciones dentales" loading="lazy">
+              <span class="service-number">03</span>
+              <div class="service-content">
+                <h3>Restauraciones</h3>
+                <p>Alternativas orientadas a recuperar la función y apariencia de piezas dentales afectadas.</p>
+                <span class="service-link">Consultar <i data-lucide="arrow-up-right"></i></span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <img src="https://images.pexels.com/photos/5622239/pexels-photo-5622239.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Estética dental" loading="lazy">
+              <span class="service-number">04</span>
+              <div class="service-content">
+                <h3>Estética dental</h3>
+                <p>Opciones enfocadas en mejorar la armonía visual de tu sonrisa de forma personalizada.</p>
+                <span class="service-link">Consultar <i data-lucide="arrow-up-right"></i></span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <img src="https://images.pexels.com/photos/5355726/pexels-photo-5355726.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Ortodoncia y alineación dental" loading="lazy">
+              <span class="service-number">05</span>
+              <div class="service-content">
+                <h3>Ortodoncia</h3>
+                <p>Consulta alternativas para corregir la posición dental y mejorar función y estética.</p>
+                <span class="service-link">Consultar <i data-lucide="arrow-up-right"></i></span>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <img src="https://images.pexels.com/photos/7803051/pexels-photo-7803051.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Rehabilitación oral" loading="lazy">
+              <span class="service-number">06</span>
+              <div class="service-content">
+                <h3>Rehabilitación oral</h3>
+                <p>Evaluación integral para recuperar comodidad, función y confianza al sonreír.</p>
+                <span class="service-link">Consultar <i data-lucide="arrow-up-right"></i></span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <p class="services-note reveal">
+          * Sección demostrativa: los tratamientos específicos deben confirmarse con el profesional antes de publicar.
+        </p>
+      </div>
+    </section>
+
+    <!-- CARE -->
+    <section class="care" id="clinica">
+      <div class="container care-grid">
+
+        <div class="care-media reveal">
+          <div class="main-photo">
+            <img
+              src="https://images.pexels.com/photos/4971498/pexels-photo-4971498.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Dentista explicando un tratamiento a una paciente"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="care-badge">
+            <i data-lucide="heart-handshake"></i>
+            <strong>Una atención más sencilla desde el primer contacto.</strong>
+            <small>Agenda, consulta y recibe indicaciones directamente por WhatsApp.</small>
+          </div>
+        </div>
+
+        <div class="care-copy reveal">
+          <span class="eyebrow">Experiencia del paciente</span>
+          <h2 class="section-title">Sentirte cómodo también forma parte del tratamiento.</h2>
+          <p class="section-copy">
+            La página está diseñada para que un paciente que encuentra la clínica en Google
+            pueda entender rápidamente dónde está, cuándo atiende y cómo ponerse en contacto.
+          </p>
+
+          <div class="benefits">
+            <div class="benefit">
+              <span class="benefit-icon"><i data-lucide="messages-square"></i></span>
+              <div>
+                <strong>Contacto inmediato</strong>
+                <span>Un toque abre WhatsApp con un mensaje listo para enviar.</span>
+              </div>
+            </div>
+
+            <div class="benefit">
+              <span class="benefit-icon"><i data-lucide="smartphone"></i></span>
+              <div>
+                <strong>Diseño responsive</strong>
+                <span>La experiencia se adapta a celular, tablet y computadora.</span>
+              </div>
+            </div>
+
+            <div class="benefit">
+              <span class="benefit-icon"><i data-lucide="search"></i></span>
+              <div>
+                <strong>Preparada para SEO local</strong>
+                <span>Metadatos y datos estructurados pensados para búsquedas en Tarija.</span>
+              </div>
+            </div>
+
+            <div class="benefit">
+              <span class="benefit-icon"><i data-lucide="navigation"></i></span>
+              <div>
+                <strong>Ubicación accesible</strong>
+                <span>Mapa integrado y acceso rápido para abrir indicaciones.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process">
+      <div class="container">
+        <div class="process-header reveal">
+          <span class="eyebrow">Agenda sin complicaciones</span>
+          <h2 class="section-title">Tres pasos para tu consulta.</h2>
+          <p class="section-copy">
+            Desde tu celular puedes iniciar el contacto y coordinar tu atención de manera rápida.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="step reveal">
+            <span class="step-number">01</span>
+            <span class="step-icon"><i data-lucide="message-circle"></i></span>
+            <h3>Escríbenos</h3>
+            <p>Cuéntanos brevemente qué necesitas o qué tratamiento deseas consultar.</p>
+          </article>
+
+          <article class="step reveal">
+            <span class="step-number">02</span>
+            <span class="step-icon"><i data-lucide="calendar-days"></i></span>
+            <h3>Coordina tu horario</h3>
+            <p>Consulta disponibilidad dentro del horario de atención de la clínica.</p>
+          </article>
+
+          <article class="step reveal">
+            <span class="step-number">03</span>
+            <span class="step-icon"><i data-lucide="map-pin-check"></i></span>
+            <h3>Visita la clínica</h3>
+            <p>Encuentra la ubicación y llega directamente desde Google Maps.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div class="cta-copy">
+            <span class="eyebrow">¿Tienes una consulta?</span>
+            <h2>Tu próxima sonrisa puede empezar con un mensaje.</h2>
+            <p>
+              Escríbenos por WhatsApp para consultar disponibilidad, horarios
+              o información sobre atención odontológica.
+            </p>
+
+            <a class="btn btn-whatsapp js-wa" href="https://wa.me/59178222939?text=Hola%20Dr.%20Fuentes%2C%20quisiera%20consultar%20disponibilidad%20para%20una%20cita." target="_blank" rel="noopener">
+              <span class="wa-dot"><i data-lucide="message-circle"></i></span>
+              Hablar por WhatsApp
+            </a>
+          </div>
+
+          <div class="cta-contact">
+            <div class="contact-row">
+              <i data-lucide="phone"></i>
+              <div>
+                <strong>Teléfono / WhatsApp</strong>
+                <a href="tel:+59178222939">+591 78222939</a>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <i data-lucide="clock"></i>
+              <div>
+                <strong>Horario</strong>
+                <span>Lunes a sábado · 15:00 a 19:30</span>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <i data-lucide="map-pin"></i>
+              <div>
+                <strong>Dirección</strong>
+                <span>Av. Cochabamba, Tarija, Bolivia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="ubicacion">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-panel reveal">
+            <span class="eyebrow">Contacto</span>
+            <h3>Cuéntanos qué necesitas</h3>
+            <p>
+              Completa estos datos y la consulta se abrirá automáticamente en WhatsApp.
+              Esta página no almacena información.
+            </p>
+
+            <form class="form" id="waForm">
+              <div class="field">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+              </div>
+
+              <div class="field">
+                <label for="motivo">Motivo de consulta</label>
+                <select id="motivo" name="motivo">
+                  <option value="Consulta general">Consulta general</option>
+                  <option value="Limpieza y prevención">Limpieza y prevención</option>
+                  <option value="Estética dental">Estética dental</option>
+                  <option value="Ortodoncia">Ortodoncia</option>
+                  <option value="Dolor o molestia">Dolor o molestia</option>
+                  <option value="Otro tratamiento">Otro tratamiento</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente tu consulta..."></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">
+                <i data-lucide="send"></i>
+                Enviar consulta por WhatsApp
+              </button>
+            </form>
+          </div>
+
+          <div class="map-wrap reveal">
+            <iframe
+              title="Ubicación de Clínica Dental Dr. Fuentes en Tarija"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Clinica%20Dental%20Dr.%20Fuentes%20Av.%20Cochabamba%20Tarija%20Bolivia&output=embed">
+            </iframe>
+
+            <div class="map-card">
+              <div>
+                <strong>Clínica Dental Dr. Fuentes</strong>
+                <span>Av. Cochabamba · Tarija, Bolivia</span>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&query=Clinica+Dental+Dr.+Fuentes+Tarija+Bolivia" target="_blank" rel="noopener" aria-label="Abrir en Google Maps">
+                <i data-lucide="navigation"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#inicio" class="brand">
+            <span class="brand-mark"><i data-lucide="sparkles"></i></span>
+            <span class="brand-name">
+              Clínica Dental Dr. Fuentes
+              <small>Odontología · Tarija</small>
+            </span>
+          </a>
+          <p class="footer-about">
+            Página demostrativa enfocada en brindar información clara, facilitar la ubicación
+            y convertir visitas digitales en consultas por WhatsApp.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title">Navegación</div>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#clinica">La clínica</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Contacto</div>
+          <ul class="footer-links">
+            <li><a href="tel:+59178222939">+591 78222939</a></li>
+            <li><a class="js-wa" href="https://wa.me/59178222939" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="#ubicacion">Av. Cochabamba, Tarija</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Clínica Dental Dr. Fuentes. Demo de sitio web.</span>
+        <span>Diseño adaptable a celular y computadora.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOAT WHATSAPP -->
+  <a class="wa-float js-wa" href="https://wa.me/59178222939?text=Hola%20Dr.%20Fuentes%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <i data-lucide="message-circle"></i>
+  </a>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta">
+    <a class="js-wa" href="https://wa.me/59178222939?text=Hola%20Dr.%20Fuentes%2C%20quisiera%20agendar%20una%20consulta." target="_blank" rel="noopener">
+      <i data-lucide="message-circle"></i>
+      Agendar por WhatsApp
+    </a>
+  </div>
+
+  <script>
+    // Inicializa iconos
+    lucide.createIcons();
+
+    // Header con fondo al hacer scroll
+    const header = document.getElementById("header");
+    const setHeader = () => {
+      header.classList.toggle("scrolled", window.scrollY > 14);
+    };
+    setHeader();
+    window.addEventListener("scroll", setHeader, { passive:true });
+
+    // Menú móvil
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    function closeMenu(){
+      navLinks.classList.remove("open");
+      document.body.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded","false");
+      menuToggle.innerHTML = '<i data-lucide="menu"></i>';
+      lucide.createIcons();
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      document.body.classList.toggle("menu-open", open);
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.innerHTML = open
+        ? '<i data-lucide="x"></i>'
+        : '<i data-lucide="menu"></i>';
+      lucide.createIcons();
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Carrusel de servicios
+    const track = document.getElementById("servicesTrack");
+    const prev = document.getElementById("servicePrev");
+    const next = document.getElementById("serviceNext");
+
+    function carouselStep(){
+      const firstCard = track.querySelector(".service-card");
+      if(!firstCard) return 320;
+      const styles = getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap || 0);
+      return firstCard.getBoundingClientRect().width + gap;
+    }
+
+    prev.addEventListener("click", () => {
+      track.scrollBy({ left:-carouselStep(), behavior:"smooth" });
+    });
+
+    next.addEventListener("click", () => {
+      track.scrollBy({ left:carouselStep(), behavior:"smooth" });
+    });
+
+    // Clic en tarjeta de servicio => WhatsApp
+    document.querySelectorAll(".service-card").forEach(card => {
+      card.addEventListener("click", () => {
+        const service = card.querySelector("h3").textContent.trim();
+        const text = `Hola Dr. Fuentes, quisiera consultar información sobre ${service}.`;
+        window.open(`https://wa.me/59178222939?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+      });
+    });
+
+    // Formulario => WhatsApp, sin guardar datos
+    document.getElementById("waForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const motivo = document.getElementById("motivo").value;
+      const mensaje = document.getElementById("mensaje").value.trim();
+
+      const texto =
+        `Hola Dr. Fuentes, mi nombre es ${nombre}. ` +
+        `Quisiera consultar sobre: ${motivo}.` +
+        (mensaje ? ` ${mensaje}` : "") +
+        ` ¿Podría indicarme disponibilidad para una cita?`;
+
+      window.open(
+        `https://wa.me/59178222939?text=${encodeURIComponent(texto)}`,
+        "_blank",
+        "noopener"
+      );
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    // Si el navegador no soporta IntersectionObserver
+    if(!("IntersectionObserver" in window)){
+      document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+    }
+  </script>
+
+</body>
+</html>
